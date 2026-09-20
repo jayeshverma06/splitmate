@@ -1,48 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Create bill - SplitMate</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <main class="flow-shell">
-        <header class="flow-header"><a class="back-link" href="../index.html">←</a><img src="../assets/61a74.png"
-                class="profile-mini" alt="">
-            <h1>Split Bill Entry</h1>
+        <header class="flow-header"><a class="back-link" href="../index.html">←</a>
+            <h1>Create a bill</h1>
         </header>
         <section class="flow-main">
             <div class="stepper"><span class="step active">Bill</span><span class="step">People</span><span
                     class="step">Split</span><span class="step">Done</span></div>
-            <h2 class="flow-title">How much was the bill?</h2>
-            <p class="flow-subtitle">Enter the total and give it a name.</p>
-            <div class="amount-panel"><span class="amount-label">▣ Total Amount</span>
-                <div class="amount-value"><span>₹</span><output id="amount-output">2,380</output></div><input
-                    class="bill-name-input" id="bill-name" value="Dinner at Social" aria-label="Bill name">
+            <h2 class="flow-title">Start with the basics</h2>
+            <p class="flow-subtitle">Name your bill, enter the total, and choose a category.</p>
+            <div class="amount-panel"><span class="amount-label">TOTAL AMOUNT</span>
+                <div class="amount-value"><span>₹</span><output id="amount-output">0</output></div><input
+                    class="bill-name-input" id="bill-name" required placeholder="e.g. Dinner with friends"
+                    aria-label="Bill name">
             </div>
-            <p class="flow-subtitle" style="margin:16px 3px 5px">CATEGORY</p>
-            <div class="category-row"><button class="category active">🍽 Dining</button><button class="category">🛒
-                    Grocery</button><button class="category">✈ Travel</button><button class="category">🍿
-                    Entertainment</button></div>
-            <div class="tax-card"><strong>％ Taxes, Tips & Extra</strong>
-                <div class="tax-row"><span>Base Subtotal</span><b>₹2,080</b></div>
-                <div class="tax-row"><span>Govt. Tax <small>5%</small></span><b>+₹100</b></div>
-                <div class="tax-row"><span>Gratuity / Tip <small>10%</small></span><b>+₹200</b></div>
-                <div class="tax-total"><span>Total Bill Calculated</span><strong id="total-label">₹2,380</strong></div>
+            <p class="flow-subtitle category-label">CATEGORY</p>
+            <div class="category-row"><button class="category active" data-category="Dining">Dining</button><button
+                    class="category" data-category="Grocery">Grocery</button><button class="category"
+                    data-category="Travel">Travel</button><button class="category"
+                    data-category="Entertainment">Entertainment</button></div>
+            <div class="tax-card"><strong>Bill summary</strong>
+                <div class="tax-row"><span>Subtotal</span><b id="subtotal-label">Calculated from total</b></div>
+                <div class="tax-row"><span>Taxes and tips</span><b>Included in total</b></div>
+                <div class="tax-total"><span>Total</span><strong id="total-label">₹0</strong></div>
             </div>
-            <div class="keypad" id="keypad">
-                <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button><button>7</button><button>8</button><button>9</button><button>.</button><button>0</button><button>⌫</button>
-            </div>
+            <div class="keypad" id="keypad"><button data-key="1">1</button><button data-key="2">2</button><button
+                    data-key="3">3</button><button data-key="4">4</button><button data-key="5">5</button><button
+                    data-key="6">6</button><button data-key="7">7</button><button data-key="8">8</button><button
+                    data-key="9">9</button><button data-key=".">.</button><button data-key="0">0</button><button
+                    data-key="backspace">⌫</button></div>
         </section>
         <footer class="flow-footer">
-            <div class="footer-total">TOTAL BILL<strong id="footer-total">₹2,380</strong></div><a class="primary-button"
-                href="people.html" id="next-people">Next: Add People (5) →</a>
+            <div class="footer-total">TOTAL<strong id="footer-total">₹0</strong></div><a class="primary-button"
+                href="people.html" id="next-people">Add People →</a>
         </footer>
     </main>
     <script type="module" src="../js/bill.js"></script>
