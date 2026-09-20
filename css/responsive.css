@@ -223,6 +223,7 @@
     }
 }
 
+
 @media (max-width:360px) {
     .app-content {
         padding-left: 16px;
@@ -540,9 +541,74 @@
 
 }
 
-.bottom-nav.history-nav {
-    left: 50%;
-    right: auto;
-    width: min(350px, calc(100vw - 40px));
-    transform: translateX(-50%)
+.flow-shell {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden
+}
+
+@media (min-width:600px) {
+    .flow-shell {
+        height: calc(100vh - 48px);
+        min-height: calc(100vh - 48px)
+    }
+}
+
+.flow-shell > .bottom-nav {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
+    width: auto;
+    transform: none
+}
+
+.flow-shell > .flow-footer {
+    bottom: 62px
+}
+
+/* History owns its scroll area so the heading, cards, and filters stay visible. */
+.history-shell {
+    height: 100vh;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column
+}
+
+.history-shell .history-main {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 24px 21px 88px
+}
+
+.history-shell .history-heading {
+    align-items: flex-start;
+    gap: 12px
+}
+
+.history-shell .history-heading h2 {
+    font-size: 22px;
+    line-height: 1.15
+}
+
+.history-shell .history-add {
+    flex: 0 0 auto;
+    min-width: 108px;
+    padding-inline: 12px
+}
+
+.history-shell .history-filters {
+    margin: 20px 0 14px
+}
+
+.history-shell .history-list {
+    padding-bottom: 12px
+}
+
+@media (min-width: 600px) {
+    .history-shell {
+        height: calc(100vh - 48px)
+    }
 }
