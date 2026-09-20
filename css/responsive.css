@@ -537,4 +537,12 @@
     .history-heading h2 {
         font-size: 22px
     }
+
+}
+
+.bottom-nav.history-nav {
+    left: 50%;
+    right: auto;
+    width: min(350px, calc(100vw - 40px));
+    transform: translateX(-50%)
 }
