@@ -1,0 +1,34 @@
+@media (min-width:600px) {
+    .app-shell {
+        margin: 24px auto;
+        border-radius: 26px;
+        min-height: 1189px
+    }
+
+    .app-content {
+        min-height: 1189px
+    }
+
+    .bottom-nav {
+        bottom: 16px
+    }
+}
+
+@media (max-width:360px) {
+    .app-content {
+        padding-left: 16px;
+        padding-right: 16px
+    }
+
+    .quick-actions {
+        gap: 8px
+    }
+
+    .action-card {
+        padding: 13px
+    }
+
+    .settle-button {
+        padding-inline: 9px
+    }
+}
