@@ -387,3 +387,154 @@
         padding-inline: 9px
     }
 }
+
+/* Keep the Figma phone canvas on every screen size. */
+@media (min-width:600px) {
+    .app-shell,
+    .flow-shell {
+        width: 390px;
+        min-height: 1189px;
+        margin: 24px auto;
+        border-radius: 26px
+    }
+
+    .app-content {
+        min-height: 1189px;
+        padding: 64px 20px 112px
+    }
+
+    .bottom-nav {
+        left: 20px;
+        right: 20px;
+        bottom: 8px
+    }
+
+    .greeting {
+        height: 74px
+    }
+
+    .greeting h1 {
+        font-size: 22px;
+        line-height: 28px
+    }
+
+    .hero-card {
+        height: 221px;
+        padding: 24px
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 8px
+    }
+
+    .hero-content p {
+        font-size: 13px;
+        line-height: 17px
+    }
+
+    .hero-content .primary-button {
+        width: 100%
+    }
+
+    .quick-actions {
+        gap: 14px;
+        margin-top: 14px
+    }
+
+    .action-card {
+        height: 126px;
+        padding: 16px
+    }
+
+    .action-card strong {
+        margin-top: 28px;
+        font-size: 14px
+    }
+
+    .action-card small {
+        font-size: 11px
+    }
+
+    .balance-card {
+        margin-top: 16px;
+        height: 72px;
+        padding: 16px
+    }
+
+    .friends-section,
+    .recent-section {
+        padding-top: 20px
+    }
+
+    .section-heading strong {
+        font-size: 13px
+    }
+
+    .bill-list,
+    .history-list {
+        grid-template-columns: 1fr
+    }
+
+    .bill-card {
+        min-height: 77px;
+        height: 77px;
+        align-items: center;
+        flex-wrap: nowrap
+    }
+
+    .bill-info {
+        min-width: 0
+    }
+
+    .bill-amount {
+        margin-left: 0;
+        text-align: right
+    }
+
+    .flow-header {
+        height: 64px;
+        padding: 0 22px
+    }
+
+    .flow-header h1 {
+        font-size: 16px
+    }
+
+    .flow-main,
+    .history-main {
+        max-width: none;
+        padding: 0 21px 110px
+    }
+
+    .flow-title {
+        font-size: 19px
+    }
+
+    .flow-subtitle {
+        font-size: 11px
+    }
+
+    .amount-panel,
+    .tax-card,
+    .review-card,
+    .review-receipt {
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0
+    }
+
+    .flow-footer {
+        position: fixed;
+        width: 390px;
+        max-width: 390px;
+        margin: 0;
+        border-radius: 0;
+        justify-content: initial
+    }
+
+    .history-heading h2 {
+        font-size: 22px
+    }
+}
