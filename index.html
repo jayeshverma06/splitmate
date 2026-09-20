@@ -25,6 +25,7 @@
                     <img src="assets/493fa.svg" alt="">
                     <span class="notification-dot"></span>
                 </button>
+                <!-- <button class="view-toggle" type="button" data-view-toggle aria-label="Toggle phone or desktop view">Phone view</button> -->
             </header>
 
             <section class="hero-card">
@@ -82,10 +83,10 @@
         </section>
 
         <nav class="bottom-nav" aria-label="Main navigation">
-            <button class="active" data-tab="home"><span>⌂ </span>Home</button>
-            <a href="pages/new-bill.html" data-tab="history"><span>◔ </span>History</a>
-            <button data-tab="groups"><span>♧ </span>Groups</button>
-            <button data-tab="settings"><span>⚙ </span>Settings</button>
+            <a class="active" href="index.html" data-tab="home"><span>⌂ </span>Home</a>
+            <a href="pages/bill-details.html" data-tab="history"><span>◔ </span>History</a>
+            <a href="pages/profile.html" data-tab="groups"><span>♧ </span>Groups</a>
+            <a href="pages/profile.html" data-tab="settings"><span>⚙ </span>Settings</a>
         </nav>
     </main>
 
@@ -102,6 +103,7 @@
     </dialog>
     <div id="toast" role="status" aria-live="polite"></div>
     <script type="module" src="js/app.js"></script>
+    <script src="js/view-mode.js"></script>
 </body>
 
 </html>

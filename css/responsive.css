@@ -206,7 +206,153 @@
         padding-left: 16px;
         padding-right: 16px
     }
+}
 
+@media (min-width:600px) {
+        .phone-mode .app-shell,
+        .phone-mode .flow-shell {
+            width: 390px;
+            min-height: 1189px;
+            margin: 24px auto;
+            border-radius: 26px
+        }
+
+        .phone-mode .app-content {
+            min-height: 1189px;
+            padding: 64px 20px 112px
+        }
+
+        .phone-mode .bottom-nav {
+            left: 20px;
+            right: 20px;
+            bottom: 8px
+        }
+
+        .phone-mode .greeting {
+            height: 74px
+        }
+
+        .phone-mode .greeting h1 {
+            font-size: 22px;
+            line-height: 28px
+        }
+
+        .phone-mode .hero-card {
+            height: 221px;
+            padding: 24px
+        }
+
+        .phone-mode .hero-content h2 {
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: 8px
+        }
+
+        .phone-mode .hero-content p {
+            font-size: 13px;
+            line-height: 17px
+        }
+
+        .phone-mode .hero-content .primary-button {
+            width: 100%
+        }
+
+        .phone-mode .quick-actions {
+            gap: 14px;
+            margin-top: 14px
+        }
+
+        .phone-mode .action-card {
+            height: 126px;
+            padding: 16px
+        }
+
+        .phone-mode .action-card strong {
+            margin-top: 28px;
+            font-size: 14px
+        }
+
+        .phone-mode .action-card small {
+            font-size: 11px
+        }
+
+        .phone-mode .balance-card {
+            margin-top: 16px;
+            height: 72px;
+            padding: 16px
+        }
+
+        .phone-mode .friends-section,
+        .phone-mode .recent-section {
+            padding-top: 20px
+        }
+
+        .phone-mode .section-heading strong {
+            font-size: 13px
+        }
+
+        .phone-mode .bill-list {
+            grid-template-columns: 1fr
+        }
+
+        .phone-mode .bill-card {
+            min-height: 77px;
+            height: 77px;
+            align-items: center;
+            flex-wrap: nowrap
+        }
+
+        .phone-mode .bill-info {
+            min-width: 0
+        }
+
+        .phone-mode .bill-amount {
+            margin-left: 0;
+            text-align: right
+        }
+
+        .phone-mode .flow-header {
+            height: 64px;
+            padding: 0 22px
+        }
+
+        .phone-mode .flow-header h1 {
+            font-size: 16px
+        }
+
+        .phone-mode .flow-main {
+            max-width: none;
+            padding: 0 21px 94px
+        }
+
+        .phone-mode .flow-title {
+            font-size: 19px
+        }
+
+        .phone-mode .flow-subtitle {
+            font-size: 11px
+        }
+
+        .phone-mode .amount-panel,
+        .phone-mode .tax-card,
+        .phone-mode .review-card,
+        .phone-mode .review-receipt {
+            max-width: none;
+            margin-left: 0;
+            margin-right: 0
+        }
+
+        .phone-mode .flow-footer {
+            position: fixed;
+            width: 390px;
+            max-width: 390px;
+            margin: 0;
+            border-radius: 0;
+            justify-content: initial
+        }
+}
+
+@media (max-width:360px) {
     .quick-actions {
         gap: 8px
     }
