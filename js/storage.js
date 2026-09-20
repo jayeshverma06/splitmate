@@ -1,16 +1,45 @@
-const KEY = "splitmate-bills";
-const defaults = [
-  { name: "Dinner at Social", people: 5, date: "Today", amount: 2450, tag: "You paid ₹490", status: "Settled", icon: "🍴" },
-  { name: "Goa Trip Airbnb & Cab", people: 4, date: "Yesterday", amount: 8450, tag: "Your share ₹2,120", status: "2 pending", icon: "✈" },
-  { name: "Weekend Groceries & Snacks", people: 3, date: "18 Sep", amount: 1280, tag: "You are owed ₹426", status: "Settled", icon: "♧" }
-];
-export function getBills() {
-  const saved = localStorage.getItem(KEY);
-  if (!saved) return defaults;
-  try { return JSON.parse(saved); } catch { return defaults; }
+const BILLS_KEY = "splitmate-bills";
+const DRAFT_KEY = "splitmate-draft";
+
+export const emptyDraft = () => ({
+  name: "",
+  amount: 0,
+  category: "Dining",
+  splitMethod: "equal",
+  allocations: {},
+  people: [{ id: crypto.randomUUID(), name: "You", contact: "", payer: true }]
+});
+
+export function getDraft() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(DRAFT_KEY));
+    return saved ? { ...emptyDraft(), ...saved, people: saved.people?.length ? saved.people : emptyDraft().people } : emptyDraft();
+  } catch {
+    return emptyDraft();
+  }
 }
+
+export function saveDraft(changes = {}) {
+  const draft = { ...getDraft(), ...changes };
+  localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+  return draft;
+}
+
+export function clearDraft() {
+  localStorage.removeItem(DRAFT_KEY);
+}
+
+export function getBills() {
+  try {
+    return JSON.parse(localStorage.getItem(BILLS_KEY)) || [];
+  } catch {
+    return [];
+  }
+}
+
 export function addBill(bill) {
   const bills = [bill, ...getBills()];
-  localStorage.setItem(KEY, JSON.stringify(bills));
+  localStorage.setItem(BILLS_KEY, JSON.stringify(bills));
+  clearDraft();
   return bills;
 }
