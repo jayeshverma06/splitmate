@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Review bill - SplitMate</title>
     <link rel="stylesheet" href="../css/style.css">
@@ -11,61 +11,41 @@
 <body>
     <main class="flow-shell">
         <header class="flow-header"><a class="back-link" href="people.html">←</a>
-            <h1>Split Bill Entry</h1><img src="../assets/ba91a.png" class="profile-mini" alt="">
+            <h1>Review & share</h1>
         </header>
         <section class="flow-main">
             <div class="stepper"><span class="step">Bill</span><span class="step">People</span><span
                     class="step">Split</span><span class="step active">Done</span></div>
-            <div class="review-card"><strong>🍽 Dinner at Social</strong><small
-                    style="display:block;color:#777">Koramangala, Bangalore <b
-                        style="float:right;color:#3700c9">₹2,380</b></small></div>
+            <div class="review-card"><strong id="review-name"></strong><small id="review-category"
+                    style="display:block;color:#777"></small><b id="review-total" style="float:right;color:#3700c9"></b>
+            </div>
             <div class="review-receipt">
-                <h2>SPLITMATE · VERIFIED</h2>
-                <h2 style="color:#0b1c30">DINNER AT SOCIAL</h2>
-                <p style="text-align:center;font-size:10px">20 Sep 2026 · 8:30 PM · Koramangala</p>
+                <h2>SPLITMATE · RECEIPT</h2>
+                <h2 id="receipt-name" style="color:#0b1c30"></h2>
+                <p id="receipt-date" style="text-align:center;font-size:10px"></p>
                 <div class="receipt-divider"></div>
-                <p>Subtotal <span style="float:right">₹2,000.00</span></p>
-                <p>Tax (5% GST) <span style="float:right">₹100.00</span></p>
-                <p>Tip & Service (14%) <span style="float:right">₹280.00</span></p>
+                <p>Bill total <span id="receipt-subtotal" style="float:right"></span></p>
                 <div class="receipt-divider"></div>
-                <div class="receipt-total"><span>Total Amount</span><span>₹2,380.00</span></div>
-                <div class="receipt-divider"></div><small>SPLIT BREAKDOWN (5 PEOPLE)</small>
-                <div class="participant"><span class="avatar">👤</span>
-                    <div class="participant-info"><strong>Jayesh (You)</strong><small>Settled · Payer</small></div><b
-                        class="share">₹476.00</b>
-                </div>
-                <div class="participant"><span class="avatar">RS</span>
-                    <div class="participant-info"><strong>Rahul Sharma</strong><small>Pending</small></div><b
-                        class="share">₹476.00</b>
-                </div>
-                <div class="participant"><span class="avatar">AV</span>
-                    <div class="participant-info"><strong>Aman Verma</strong><small>Pending</small></div><b
-                        class="share">₹476.00</b>
-                </div>
-                <div class="participant"><span class="avatar">PP</span>
-                    <div class="participant-info"><strong>Priya Patel</strong><small>Pending</small></div><b
-                        class="share">₹476.00</b>
-                </div>
-                <div class="participant"><span class="avatar">NG</span>
-                    <div class="participant-info"><strong>Neha Gupta</strong><small>Pending</small></div><b
-                        class="share">₹476.00</b>
-                </div>
+                <div class="receipt-total"><span>Total amount</span><span id="receipt-total"></span></div>
+                <div class="receipt-divider"></div><small id="breakdown-title"></small>
+                <div id="review-participants"></div>
                 <div class="tax-total" style="margin-top:18px;display:block;text-align:center;color:#5a27d9">Each person
-                    pays <strong>₹476.00</strong></div>
+                    pays on average <strong id="average-share"></strong></div>
             </div>
             <h3 style="font-size:12px;margin:18px 0 4px">Send payment request via:</h3>
-            <div class="share-grid">
-                <div><span class="share-option">▤</span><small>WhatsApp</small></div>
-                <div><span class="share-option">▰</span><small>SMS</small></div>
-                <div><span class="share-option">↗</span><small>Copy Link</small></div>
-                <div><span class="share-option">▦</span><small>QR Code</small></div>
-            </div><button class="primary-button" style="background:#5130ec;color:white" data-action="confirm">Confirm &
-                Split Bill →</button><a class="outline-button"
-                style="display:flex;align-items:center;justify-content:center;margin-top:8px" href="people.html">☷ Edit
-                Split Details</a>
+            <div class="share-grid"><button class="share-choice" data-share="WhatsApp"><span
+                        class="share-option">▤</span><small>WhatsApp</small></button><button class="share-choice"
+                    data-share="SMS"><span class="share-option">▰</span><small>SMS</small></button><button
+                    class="share-choice" data-share="Copy link"><span class="share-option">↗</span><small>Copy
+                        Link</small></button><button class="share-choice" data-share="QR code"><span
+                        class="share-option">▦</span><small>QR Code</small></button></div><button
+                class="primary-button confirm-button" id="confirm-bill">Confirm & Split Bill →</button><a
+                class="outline-button" style="display:flex;align-items:center;justify-content:center;margin-top:8px"
+                href="people.html">Edit Split Details</a>
+            <p class="flow-subtitle" id="review-status" role="status"></p>
         </section>
     </main>
-    <script>document.addEventListener("click", e => { if (e.target.dataset.action === "confirm") { localStorage.setItem("splitmate-complete", "true"); e.target.textContent = "Bill Split Successfully ✓"; e.target.disabled = true } })</script>
+    <script type="module" src="../js/review.js"></script>
 </body>
 
 </html>
