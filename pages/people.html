@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>People - SplitMate</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <main class="flow-shell">
+        <header class="flow-header"><a class="back-link" href="new-bill.html">←</a>
+            <h1>Split Bill Entry</h1><img src="../assets/ba91a.png" class="profile-mini" alt="">
+        </header>
+        <section class="flow-main">
+            <div class="stepper"><span class="step">Bill</span><span class="step active">People</span><span
+                    class="step">Split</span><span class="step">Done</span></div>
+            <p class="flow-subtitle">STEP 2 OF 4 · Expense Allocation</p>
+            <h2 class="flow-title">Who’s Splitting & How?</h2>
+            <p class="flow-subtitle">5 People splitting ₹2,380 total</p>
+            <div class="method-grid"><button class="method active">⚖<strong>Equal Split</strong><small>₹476.00
+                        each</small></button><button class="method">％<strong>Percentage (%)</strong><small>Split by
+                        shares %</small></button><button class="method">▣<strong>Exact Amount</strong><small>Specify in
+                        ₹</small></button><button class="method">☷<strong>Custom Shares</strong><small>Weights &
+                        parts</small></button></div>
+            <div class="section-heading" style="margin-top:18px"><strong>Participants <small>5</small></strong><span
+                    class="flow-subtitle">Individual Share</span></div>
+            <div class="participant"><span class="avatar">👤</span>
+                <div class="participant-info"><strong>You (Jayesh) <em>PAYER</em></strong><small>Settled ₹2,380
+                        upfront</small></div><b class="share">₹476.00</b>
+            </div>
+            <div class="participant"><span class="avatar">RS</span>
+                <div class="participant-info"><strong>Rahul Sharma</strong><small>rahul@email.com</small></div><b
+                    class="share">₹476.00</b>
+            </div>
+            <div class="participant"><span class="avatar">AV</span>
+                <div class="participant-info"><strong>Aman Verma</strong><small>+91 98201 • • • •</small></div><b
+                    class="share">₹476.00</b>
+            </div>
+            <div class="participant"><span class="avatar">PP</span>
+                <div class="participant-info"><strong>Priya Patel</strong><small>priya.patel@work.io</small></div><b
+                    class="share">₹476.00</b>
+            </div>
+            <div class="participant"><span class="avatar">NG</span>
+                <div class="participant-info"><strong>Neha Gupta</strong><small>neha@splitmate.me</small></div><b
+                    class="share">₹476.00</b>
+            </div><button class="outline-button" style="margin-top:14px;color:#4b21d1">♧ Add person from contacts or
+                group</button>
+            <div class="success-card">● Split perfectly balanced<br><small>The bill is fully and equally split: ₹476.00
+                    × 5 = ₹2,380.00 with ₹0.00 leftover.</small></div>
+        </section>
+        <footer class="flow-footer"><a class="primary-button" href="review.html">Continue to Review →</a></footer>
+    </main>
+    <script>document.querySelectorAll(".method").forEach(button => button.addEventListener("click", () => { document.querySelectorAll(".method").forEach(item => item.classList.remove("active")); button.classList.add("active") })); document.querySelector(".outline-button").addEventListener("click", () => { alert("Add person from contacts is coming soon.") });</script>
+</body>
+
+</html>
