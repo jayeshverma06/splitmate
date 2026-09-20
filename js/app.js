@@ -4,8 +4,9 @@ const dialog = document.querySelector("#bill-dialog");
 const form = document.querySelector("#bill-form");
 const toast = document.querySelector("#toast");
 function money(value) { return `₹${Number(value).toLocaleString("en-IN")}`; }
+function peopleCount(bill) { return Array.isArray(bill.people) ? bill.people.length : Number(bill.people || 0); }
 function renderBills(bills = getBills()) {
-  billList.innerHTML = bills.slice(0, 3).map((bill) => `<article class="bill-card"><span class="bill-icon">${bill.icon || "▣"}</span><div class="bill-info"><strong>${bill.name}</strong><small>${bill.people} people · ${bill.date}</small><span class="bill-tag">${bill.tag}</span></div><div class="bill-amount"><strong>${money(bill.amount)}</strong><small class="${bill.status !== "Settled" ? "pending" : ""}">● ${bill.status}</small></div></article>`).join("");
+  billList.innerHTML = bills.slice(0, 3).map((bill) => `<article class="bill-card"><span class="bill-icon">${bill.icon || "▣"}</span><div class="bill-info"><strong>${bill.name}</strong><small>${peopleCount(bill)} people · ${bill.date}</small><span class="bill-tag">${bill.tag}</span></div><div class="bill-amount"><strong>${money(bill.amount)}</strong><small class="${bill.status !== "Settled" ? "pending" : ""}">● ${bill.status}</small></div></article>`).join("");
 }
 function showToast(message) { toast.textContent = message; toast.classList.add("show"); window.setTimeout(() => toast.classList.remove("show"), 2200); }
 function openBillDialog() { dialog.showModal(); form.elements.name.focus(); }
