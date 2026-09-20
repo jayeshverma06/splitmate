@@ -1,240 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SplitMate - Split Bills Easily</title>
-
-    <!-- Google Font -->
+    <meta name="theme-color" content="#f8f9ff">
+    <title>SplitMate</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- Main CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
-
-    <main class="app">
-
-        <!-- =========================
-             HEADER
-        ========================== -->
-        <header class="header">
-
-            <div class="greeting">
-
-                <p class="greeting-small">
-                    Good afternoon!
-                    <span class="sparkle">✦</span>
-                </p>
-
-                <h1>Ready to split a bill?</h1>
-
-            </div>
-
-            <button class="notification-btn" aria-label="Notifications">
-
-                <span class="notification-icon">♧</span>
-
-                <span class="notification-badge"></span>
-
-            </button>
-
-        </header>
-
-
-        <!-- =========================
-             HERO CARD
-        ========================== -->
-        <section class="hero-card">
-
-            <!-- Decorative glow -->
-            <div class="hero-glow hero-glow-one"></div>
-            <div class="hero-glow hero-glow-two"></div>
-
-            <!-- Decorative receipt -->
-            <div class="receipt-decoration">
-                <div class="receipt-line"></div>
-                <div class="receipt-line short"></div>
-                <div class="receipt-line"></div>
-                <div class="receipt-line tiny"></div>
-            </div>
-
-
-            <div class="hero-content">
-
-                <span class="hero-label">
-                    ZERO-STRESS MATH
-                </span>
-
-                <h2>
-                    Split a new bill
-                </h2>
-
-                <p>
-                    Add a bill and split it with your friends seamlessly.
-                </p>
-
-                <a href="pages/new-bill.html" class="primary-btn">
-                    <span>Start Splitting</span>
-                    <span class="arrow">→</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             QUICK ACTIONS
-        ========================== -->
-        <section class="section">
-
-            <div class="section-heading">
-
-                <h2>Quick actions</h2>
-
-            </div>
-
-
-            <div class="quick-actions">
-
-                <!-- Scan Receipt -->
-                <button class="action-card">
-
-                    <div class="action-icon scan-icon">
-                        <span>⌁</span>
-                    </div>
-
-                    <div class="action-text">
-
-                        <h3>Scan Receipt</h3>
-
-                        <p>
-                            Auto-detect items
-                        </p>
-
-                    </div>
-
-                    <span class="action-arrow">→</span>
-
+    <main class="app-shell">
+        <section class="app-content" aria-label="SplitMate home">
+            <header class="greeting">
+                <div>
+                    <div class="eyebrow">Good afternoon! <span>✨</span></div>
+                    <h1>Ready to split a bill?</h1>
+                </div>
+                <button class="icon-button notification-button" aria-label="Notifications">
+                    <img src="assets/493fa.svg" alt="">
+                    <span class="notification-dot"></span>
                 </button>
+            </header>
 
+            <section class="hero-card">
+                <img class="hero-receipt" src="assets/c0a71.svg" alt="" aria-hidden="true">
+                <div class="hero-content">
+                    <div class="hero-kicker"><img src="assets/3f70a.svg" alt=""> ZERO-STRESS MATH</div>
+                    <h2>Split a new bill</h2>
+                    <p>Add a bill and split it with your friends<br>seamlessly.</p>
+                    <button class="primary-button" data-action="new-bill"><span class="plus">⊕</span> Start
+                        Splitting</button>
+                </div>
+            </section>
 
-                <!-- Enter Manually -->
-                <a href="pages/new-bill.html" class="action-card">
-
-                    <div class="action-icon manual-icon">
-                        <span>＋</span>
-                    </div>
-
-                    <div class="action-text">
-
-                        <h3>Enter Manually</h3>
-
-                        <p>
-                            Type the amount
-                        </p>
-
-                    </div>
-
+            <section class="quick-actions">
+                <button class="action-card" data-action="scan">
+                    <span class="action-icon scan-icon"><img src="assets/f76cd.svg" alt=""></span>
                     <span class="action-arrow">→</span>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             BALANCE SUMMARY
-        ========================== -->
-        <section class="section">
-
-            <div class="balance-card">
-
-                <div class="balance-top">
-
-                    <div>
-                        <p class="balance-label">
-                            OVERALL BALANCE
-                        </p>
-
-                        <h2>
-                            You are owed
-                        </h2>
-                    </div>
-
-                    <div class="balance-icon">
-                        ₹
-                    </div>
-
-                </div>
-
-
-                <div class="balance-bottom">
-
-                    <p class="balance-amount">
-                        ₹1,700
-                    </p>
-
-                    <button class="balance-btn">
-                        View details
-                        <span>→</span>
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RECENT BILLS
-        ========================== -->
-        <section class="section recent-section">
-
-            <div class="section-heading">
-
-                <h2>Recent bills</h2>
-
-                <button class="view-all-btn">
-                    View all
+                    <strong>Scan Receipt</strong>
+                    <small>Auto-detect items</small>
                 </button>
+                <button class="action-card" data-action="new-bill">
+                    <span class="action-icon manual-icon"><img src="assets/699e9.svg" alt=""></span>
+                    <span class="action-arrow">→</span>
+                    <strong>Enter Manually</strong>
+                    <small>Type the amount</small>
+                </button>
+            </section>
 
-            </div>
+            <section class="balance-card">
+                <div class="balance-mark"><img src="assets/677f2.svg" alt=""></div>
+                <div class="balance-copy"><small>OVERALL BALANCE</small><strong>You are owed ₹1,700</strong></div>
+                <button class="settle-button" data-action="settle">Settle Up <span>→</span></button>
+            </section>
 
-
-            <div class="empty-state">
-
-                <div class="empty-icon">
-                    ₹
+            <section class="friends-section">
+                <div class="section-heading"><strong>Quick Split with Pals</strong><button
+                        data-action="customize">Customize</button></div>
+                <div class="friends-row">
+                    <button class="friend"><span><img src="assets/6f308.png"
+                                alt="Priya"><i></i></span><b>Priya</b></button>
+                    <button class="friend"><span><img src="assets/5d3c8.png"
+                                alt="Kabir"><i></i></span><b>Kabir</b></button>
+                    <button class="friend"><span><img src="assets/8fd53.png"
+                                alt="Ananya"><i></i></span><b>Ananya</b></button>
+                    <button class="friend"><span><img src="assets/406f8.png"
+                                alt="Rohan"><i></i></span><b>Rohan</b></button>
+                    <button class="friend add-friend" data-action="add-friend"><span>＋</span><b>Add</b></button>
                 </div>
+            </section>
 
-                <h3>No recent bills</h3>
-
-                <p>
-                    Your recently created bills will appear here.
-                </p>
-
-            </div>
-
+            <section class="recent-section">
+                <div class="section-heading"><strong>Recent Bills</strong><button data-action="see-all">See
+                        all›</button></div>
+                <div id="bill-list" class="bill-list"></div>
+            </section>
         </section>
 
+        <nav class="bottom-nav" aria-label="Main navigation">
+            <button class="active" data-tab="home"><span>⌂ </span>Home</button>
+            <button data-tab="history"><span>◔ </span>History</button>
+            <button data-tab="groups"><span>♧ </span>Groups</button>
+            <button data-tab="settings"><span>⚙ </span>Settings</button>
+        </nav>
     </main>
 
-
-    <!-- JavaScript -->
-    <script src="js/app.js"></script>
-
+    <dialog id="bill-dialog">
+        <form method="dialog" id="bill-form">
+            <button class="close-button" type="button" data-action="close-dialog" aria-label="Close">×</button>
+            <p class="dialog-kicker">NEW BILL</p>
+            <h2>Split a new bill</h2>
+            <label>Bill name<input name="name" required placeholder="Dinner at Social"></label>
+            <label>Total amount<input name="amount" required type="number" min="1" step="1" placeholder="2450"></label>
+            <label>People<input name="people" required type="number" min="2" value="2"></label>
+            <button class="primary-button" value="default">Create bill</button>
+        </form>
+    </dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="js/app.js"></script>
 </body>
+
 </html>
